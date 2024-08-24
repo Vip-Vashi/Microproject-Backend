@@ -42,7 +42,6 @@ public class Product {
 
 	public Product() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
@@ -207,6 +206,4 @@ public class Product {
 				+ "]";
 	}
 
-	
-    // Getters and Setters
 }

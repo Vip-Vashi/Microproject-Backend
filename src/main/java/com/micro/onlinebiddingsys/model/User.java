@@ -40,7 +40,6 @@ public class User {
 		private double walletAmt;
 		public User() {
 			super();
-			// TODO Auto-generated constructor stub
 		}
 		
 		

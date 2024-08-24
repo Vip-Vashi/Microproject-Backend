@@ -8,8 +8,6 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
-
-import com.micro.onlinebiddingsys.model.Product;
 import com.micro.onlinebiddingsys.model.Winner;
 import com.micro.onlinebiddingsys.repository.WinnerRepository;
 

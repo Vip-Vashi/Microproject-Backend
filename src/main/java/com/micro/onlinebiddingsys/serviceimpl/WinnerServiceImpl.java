@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 import com.micro.onlinebiddingsys.model.Product;
-import com.micro.onlinebiddingsys.model.User;
 import com.micro.onlinebiddingsys.model.Winner;
 import com.micro.onlinebiddingsys.repoimpl.ProductRepositoryImpl;
 import com.micro.onlinebiddingsys.repoimpl.WinnerRepositoryImpl;
@@ -52,7 +51,6 @@ public class WinnerServiceImpl implements WinnerService{
 	    public List<Winner> getAllWinners() {
 	    	
 	    	return winnerRepository.findAllWins();
-	        // Assuming the EntityManager-based repository doesn't have a findAll method
-	        // Implement a custom query if necessary
+	       
 	    }
 }

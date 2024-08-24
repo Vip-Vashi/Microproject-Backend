@@ -14,8 +14,7 @@ import com.micro.onlinebiddingsys.model.Login;
 import com.micro.onlinebiddingsys.model.User;
 import com.micro.onlinebiddingsys.service.Adminservice;
 import com.micro.onlinebiddingsys.service.UserService;
-
-@CrossOrigin("*")
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/login")
 public class LoginController {
@@ -31,26 +30,20 @@ public class LoginController {
         String email = login.getEmail();
         String password = login.getPassword();
  
-        // Authenticate AdministrativeUser
         List<AdministrativeUser> admins = administrativeUserService.getAllAdministrativeUsers();
         for (AdministrativeUser admin : admins) {
             if (admin.getEmail().equals(email) && admin.getPassword().equals(password)) {
-                // Successful login for administrative user
-                return admin; // Return the logged-in administrative user details
+                return admin; 
             }
         }
  
-        // Authenticate Customer
         List<User> customers = customerService.getAllCustomers();
         for (User customer : customers) {
             if (customer.getEmail().equals(email) && customer.getPassword().equals(password)) {
-                // Successful login for customer
-                return customer; // Return the logged-in customer details
+                return customer; 
             }
         }
- 
-        // Authentication failed
-        return "Login failed: Invalid email or password";
+         return "Login failed: Invalid email or password";
     }
 	
 	

@@ -18,7 +18,7 @@ import com.micro.onlinebiddingsys.service.WinnerService;
 
 @RestController
 @RequestMapping("/winners")
-@CrossOrigin("*")
+@CrossOrigin("http://localhost:3000")
 
 public class WinnerController {
 

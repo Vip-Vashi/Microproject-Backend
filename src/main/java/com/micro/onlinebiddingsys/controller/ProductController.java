@@ -97,53 +97,53 @@ public class ProductController {
         }
     }
 
-//    @PutMapping("/update/{id}")
-//    public void updateProduct(
-//            @PathVariable int id,
-//            @RequestParam("name") String name,
-//            @RequestParam("description") String description,
-//            @RequestParam("productstatus") String productStatus,
-//            @RequestParam("startingPrice") Double startingPrice,
-//            @RequestParam("auctionStartTimeDate") String auctionStartTimeDate,
-//            @RequestParam("endTimeDate") String endTimeDate,
-//            @RequestParam(value = "imageBlob", required = false) MultipartFile imageBlob,
-//            @RequestParam("imageUrl") String imageUrl,
-//            @RequestParam("user") int user,
-//            @RequestParam("currentBiddingPrice") Double currentBiddingPrice
-//    ) {
-//        try {
-//            Product existingProduct = productService.getProductById(id);
-//
-//            if (existingProduct != null) {
-//                byte[] imageBytes = existingProduct.getImageBlob(); // Retain existing image
-//
-//                if (imageBlob != null && !imageBlob.isEmpty()) {
-//                    imageBytes = imageBlob.getBytes();
-//                }
-//
-//                User userobj = userService.getCustomerById(user);
-//
-//                LocalDateTime auctionStart = LocalDateTime.parse(auctionStartTimeDate);
-//                LocalDateTime endTime = LocalDateTime.parse(endTimeDate);
-//
-//                existingProduct.setName(name);
-//                existingProduct.setDescription(description);
-//                existingProduct.setProductstatus(productStatus);
-//                existingProduct.setImageBlob(imageBytes);
-//                existingProduct.setImageUrl(imageUrl);
-//                existingProduct.setStartingPrice(startingPrice);
-//                existingProduct.setAuctionStartTimeDate(auctionStart);
-//                existingProduct.setEndTimeDate(endTime);
-//                existingProduct.setCurrentBiddingPrice(currentBiddingPrice);
-//                existingProduct.setUser(userobj);
-//
-//                productService.updateProduct(existingProduct);
-//            }
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            // Handle the error appropriately
-//        }
-//    }
+    @PutMapping("/update/{id}")
+    public void updateProduct(
+            @PathVariable int id,
+            @RequestParam("name") String name,
+            @RequestParam("description") String description,
+            @RequestParam("productstatus") String productStatus,
+            @RequestParam("startingPrice") Double startingPrice,
+            @RequestParam("auctionStartTimeDate") String auctionStartTimeDate,
+            @RequestParam("endTimeDate") String endTimeDate,
+            @RequestParam(value = "imageBlob", required = false) MultipartFile imageBlob,
+            @RequestParam("imageUrl") String imageUrl,
+            @RequestParam("user") int user,
+            @RequestParam("currentBiddingPrice") Double currentBiddingPrice
+    ) {
+        try {
+            Product existingProduct = productService.getProductById(id);
+
+            if (existingProduct != null) {
+                byte[] imageBytes = existingProduct.getImageBlob(); // Retain existing image
+
+                if (imageBlob != null && !imageBlob.isEmpty()) {
+                    imageBytes = imageBlob.getBytes();
+                }
+
+                User userobj = userService.getCustomerById(user);
+
+                LocalDateTime auctionStart = LocalDateTime.parse(auctionStartTimeDate);
+                LocalDateTime endTime = LocalDateTime.parse(endTimeDate);
+
+                existingProduct.setName(name);
+                existingProduct.setDescription(description);
+                existingProduct.setProductstatus(productStatus);
+                existingProduct.setImageBlob(imageBytes);
+                existingProduct.setImageUrl(imageUrl);
+                existingProduct.setStartingPrice(startingPrice);
+                existingProduct.setAuctionStartTimeDate(auctionStart);
+                existingProduct.setEndTimeDate(endTime);
+                existingProduct.setCurrentBiddingPrice(currentBiddingPrice);
+                existingProduct.setUser(userobj);
+
+                productService.updateProduct(existingProduct);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the error appropriately
+        }
+    }
 	
 }

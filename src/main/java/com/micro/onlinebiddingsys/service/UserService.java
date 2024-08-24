@@ -10,4 +10,5 @@ public interface UserService {
     List<User> getAllCustomers();
     void deleteCustomerById(int uid);
     User updateCustomer(int uid, User user);
+	void updatewallet(int id, double walletAmt);
 }

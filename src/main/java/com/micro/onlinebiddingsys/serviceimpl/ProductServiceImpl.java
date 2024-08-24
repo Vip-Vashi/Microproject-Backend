@@ -40,8 +40,7 @@ public class ProductServiceImpl implements ProductService {
 
     public List<Product> getAllProducts() {
     	return productRepository.findAll();
-        // Assuming the EntityManager-based repository doesn't have a findAll method
-         // Implement a custom query if necessary
+       
     }
 
 	@Override

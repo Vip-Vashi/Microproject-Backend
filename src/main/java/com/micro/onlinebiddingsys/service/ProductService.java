@@ -10,5 +10,5 @@ public interface ProductService {
 	 public Product getProductById(int id) ;
 	 public void deleteProduct(int id) ;
 	 public List<Product> getAllProducts() ;
-	public void placebid(int productId, int userID, Double currentBiddingPrice);
+     public void placebid(int productId, int userID, Double currentBiddingPrice);
 }

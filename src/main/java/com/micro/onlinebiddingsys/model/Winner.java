@@ -22,7 +22,7 @@ public class Winner {
 
 	public Winner() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Winner(int id, Product product) {
@@ -52,7 +52,4 @@ public class Winner {
 		return "Winner [id=" + id + ", product=" + product + "]";
 	}
 
-    
-
-    // Getters and Setters
 }

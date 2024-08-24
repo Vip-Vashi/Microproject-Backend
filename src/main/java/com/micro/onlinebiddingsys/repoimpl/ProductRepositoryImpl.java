@@ -6,7 +6,7 @@ import jakarta.transaction.Transactional;
 
 import java.util.List;
 
-import org.apache.logging.log4j.util.StringBuilderFormattable;
+
 import org.springframework.stereotype.Repository;
 
 import com.micro.onlinebiddingsys.model.Product;
@@ -33,7 +33,8 @@ public class ProductRepositoryImpl implements ProductRepository{
         return entityManager.find(Product.class, id);
     }
     
-    public List<Product> findAll() {
+    @SuppressWarnings("unchecked")
+	public List<Product> findAll() {
         String hql = "from Product";
         Query query = entityManager.createQuery(hql);
         return query.getResultList();
